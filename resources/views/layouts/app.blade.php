@@ -50,7 +50,9 @@
         <div class="collapse navbar-collapse" id="spark-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/') }}">Home</a></li>
+                @if (Auth::check())
+                    <li><a href="{{ url('/') }}">Todo</a></li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->
