@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
 
-    Route::get('/', 'TodoController@index');
+    Route::get('/', 'TaskController@index');
 });
 
 Route::group(['middleware' => 'web'], function () {
