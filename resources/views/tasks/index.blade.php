@@ -5,7 +5,6 @@
         <button style="margin-top: 20px;" class="btn btn-primary pull-right">Create a new task</button>
         <h1>To do list</h1>
 
-
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
