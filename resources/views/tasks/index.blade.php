@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container spark-screen">
         <button style="margin-top: 20px;" class="btn btn-primary pull-right">Create a new task</button>
         <h1>To do list</h1>
@@ -24,4 +25,5 @@
             </tbody>
         </table>
     </div>
+
 @endsection
