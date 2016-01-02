@@ -25,7 +25,6 @@ elixir(function (mix) {
 
     mix.sass('app.scss')
         .scripts([
-            'libs/jquery.js',
             'app.js',
         ], './public/js/app.js')
         .version([

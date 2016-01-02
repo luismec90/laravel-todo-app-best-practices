@@ -24,6 +24,18 @@
             @endforeach
             </tbody>
         </table>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id="app">
+            <button type="submit" @click="updateCount">
+               Increment Counter: {{ count }}
+            </button>
+        </div>
+
     </div>
 
 @endsection

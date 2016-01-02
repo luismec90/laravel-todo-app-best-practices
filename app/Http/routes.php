@@ -29,7 +29,6 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web', 'auth']], function () {
-
     Route::get('/', 'TaskController@index');
 });
 
