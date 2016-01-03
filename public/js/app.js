@@ -1,16 +1,20 @@
-new Vue({
-    el: '#app',
+function Task() {
+}
 
-    data: {
-        count: 0
-    },
-
-
-    methods: {
-        updateCount: function () {
-            this.count += 1;
-        }
+Task.prototype = {
+    message: function () {
+        alert('asdf');
     }
+};
 
-});
+var $Task;
+
+$(document).ready(
+    function () {
+        $Task = new Task();
+
+        $Task.message();
+    }
+);
+
 //# sourceMappingURL=app.js.map
