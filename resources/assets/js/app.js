@@ -3,7 +3,6 @@ function Task() {
 
 Task.prototype = {
     message: function () {
-        alert('asdf');
     }
 };
 
