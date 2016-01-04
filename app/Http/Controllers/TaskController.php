@@ -25,11 +25,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-
-
         $tasks = $this->task->all();
+        return view('tasks.index', compact('tasks'));
 
-        //return view('tasks.index', compact('tasks'));
-        return view('test.html');
     }
 }
