@@ -30,6 +30,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/', 'TaskController@index');
+    Route::post('/store', ['as' => 'store_task_path', 'uses' => 'TaskController@store']);
 });
 
 Route::group(['middleware' => 'web'], function () {

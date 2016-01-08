@@ -29,4 +29,10 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
 
     }
+
+
+    public function store(Request $request)
+    {
+        return $request->all();
+    }
 }

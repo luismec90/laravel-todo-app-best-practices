@@ -33,20 +33,23 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title">Create task</h4>
                     </div>
-                    <form action="" method="post" class="" role="form">
+                    <form action="{{ route('store_task_path') }}" method="post" class="" role="form">
+                        {!! csrf_field() !!}
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Task</label>
-                                <input type="text" class="form-control" id="task" name="task" placeholder="Go to the supermarket">
+                                <input type="text" class="form-control" id="name" name="name"
+                                       placeholder="Go to the supermarket">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Notes</label>
-                                <textarea class="form-control" id="notes" name="notes" placeholder="Buy milk, meat and eggs."></textarea>
+                                <textarea class="form-control" id="notes" name="notes"
+                                          placeholder="Buy milk, meat and eggs."></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div><!-- /.modal-content -->
