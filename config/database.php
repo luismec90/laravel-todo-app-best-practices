@@ -64,6 +64,18 @@ return [
             'strict'    => false,
         ],
 
+        'mysql_testing' => [
+            'driver'    => 'mysql',
+            'host'      => env('DBT_HOST', 'localhost'),
+            'database'  => env('DBT_DATABASE', 'forge'),
+            'username'  => env('DBT_USERNAME', 'forge'),
+            'password'  => env('DBT_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
