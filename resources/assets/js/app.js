@@ -1,17 +1,22 @@
-function Task() {
+function TasksPage() {
+    this.construct();
 }
 
-Task.prototype = {
-    message: function () {
+TasksPage.prototype = {
+    construct: function () {
+        this.init_events();
+    },
+    init_events: function () {
+        $('#create-task').click(function () {
+            $('#modal-create-task').modal();
+        });
     }
 };
 
-var $Task;
+var $TasksPage;
 
 $(document).ready(
     function () {
-        $Task = new Task();
-
-        $Task.message();
+        $TasksPage = new TasksPage();
     }
 );

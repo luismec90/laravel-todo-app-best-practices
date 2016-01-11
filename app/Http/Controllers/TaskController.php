@@ -11,11 +11,23 @@ use Illuminate\Support\Facades\Redirect;
 
 class TaskController extends Controller
 {
-    private $task;
 
-    public function __construct(TaskRepository $task)
+    /**
+     * The task repository instance.
+     *
+     * @var \App\Repositories\TaskRepository
+     */
+    private $tasks;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @param \App\Repositories\TaskRepository $tasks
+     * @return void
+     */
+    public function __construct(TaskRepository $tasks)
     {
-        $this->task = $task;
+        $this->tasks = $tasks;
     }
 
     /**
@@ -26,22 +38,26 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = $this->task->all();
+        $tasks = $this->tasks->all();
 
         return view('tasks.index', compact('tasks'));
     }
 
     /**
-     * Store an specific task for the current user.
+     * Create a new task.
      *
      * @param  Request $request
      * @return Redirect
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->task->getRules());
+        $user = $request->user();
 
-        $this->task->save($request);
+        $this->validate($request, $this->tasks->getRules());
+
+        $task = $this->task->create(
+            $user, ['name' => $request->name]
+        );
 
         return Redirect::back();
     }

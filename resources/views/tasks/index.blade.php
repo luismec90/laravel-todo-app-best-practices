@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container spark-screen">
-        <button id="create-task" style="margin-top: 20px;" class="btn btn-primary pull-right">Create a new task</button>
+        <a id="create-task" style="margin-top: 20px;" class="btn btn-primary pull-right">Create a new task</a>
         <h1>To do list</h1>
 
         <table class="table table-bordered table-hover">
