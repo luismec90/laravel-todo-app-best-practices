@@ -9,14 +9,16 @@
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
-                <th>Name</th>
+                <th>Title</th>
+                <th>Description</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             @foreach($tasks as $task)
                 <tr>
-                    <td>{{ $task->name }}</td>
+                    <td>{{ $task->title }}</td>
+                    <td>{{ $task->description }}</td>
                     <td>
                         <button class="btn btn-primary btn-sm">Edit</button>
                     </td>
@@ -37,19 +39,19 @@
                         {!! csrf_field() !!}
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Task</label>
-                                <input type="text" class="form-control" id="name" name="name"
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" class="form-control" id="title" name="title"
                                        placeholder="Go to the supermarket">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Notes</label>
-                                <textarea class="form-control" id="notes" name="notes"
+                                <label for="exampleInputEmail1">Description</label>
+                                <textarea class="form-control" id="description" name="description"
                                           placeholder="Buy milk, meat and eggs."></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
                         </div>
                     </form>
                 </div><!-- /.modal-content -->

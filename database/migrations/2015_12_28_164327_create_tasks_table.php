@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('todos');
+        Schema::drop('tasks');
     }
 }

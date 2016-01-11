@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\TaskRepository;
+use App\Task;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,8 +34,7 @@ class TaskController extends Controller
     /**
      * Display a list of all of the user's task.
      *
-     * @param  Request $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -53,12 +53,14 @@ class TaskController extends Controller
     {
         $user = $request->user();
 
-        $this->validate($request, $this->tasks->getRules());
+        $this->validate($request, Task::$rules);
 
-        $task = $this->task->create(
-            $user, ['name' => $request->name]
-        );
+        $task = $this->tasks->create($user, [
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+        $tasks = $user->tasks;
 
-        return Redirect::back();
+        return response()->json(['message' => 'Task created successfully.', 'tasks' => $tasks]);
     }
 }

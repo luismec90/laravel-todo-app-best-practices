@@ -8,7 +8,6 @@ TasksPage.prototype = {
     },
     init_events: function () {
         $('#create-task').click(function () {
-            $('#modal-create-task .modal-title').html('Asdfgh');
             $('#modal-create-task').modal();
         });
     }
