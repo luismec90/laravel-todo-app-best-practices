@@ -33,18 +33,4 @@ class UserTest extends TestCase
             ->seePageIs('/');
     }
 
-    /** @test */
-    public function it_can_create_a_task()
-    {
-        $user = factory(App\User::class)->create();
-
-        $this->actingAs($user)
-            ->visit('/')
-            ->see('To do list')
-            ->click('Create a new task')
-            ->type('Go to the bank', 'title')
-            ->type('Pay bills', 'description')
-            ->press('Create')
-            ->see('Task created successfully.');
-    }
 }
