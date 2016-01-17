@@ -10,6 +10,14 @@ TasksPage.prototype = {
         $('#create-task').click(function () {
             $('#modal-create-task').modal();
         });
+
+        $('.edit-task').click(function () {
+            $('#modal-edit-task').modal();
+        });
+
+        $('.delete-task').click(function () {
+            $('#modal-delete-task').modal();
+        });
     }
 };
 

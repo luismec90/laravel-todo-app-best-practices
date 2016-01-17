@@ -28,8 +28,8 @@ elixir(function (mix) {
             'app.js',
         ], './public/js/app.js')
         .version([
-            '/css/app.css',
-            '/js/app.js'
+            '/public/css/app.css',
+            '/public/js/app.js'
         ])
         .browserSync({
             proxy: 'http://todo.dev'
